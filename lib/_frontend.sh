@@ -16,6 +16,8 @@ frontend_node_dependencies() {
 
   sudo su - deploy <<EOF
   cd /home/deploy/${instancia_add}/frontend
+  npm config set legacy-peer-deps true
+  npm cache clean --force
   npm install
 EOF
 
